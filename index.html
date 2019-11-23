@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>ConvexOpt</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js" type="text/javascript"> </script>
+    </head>
+
+    <body>
+        <div>
+            <canvas id="chart"></canvas>
+            <script>
+                var dataList = []
+                for (var i = 0; i < 10; i++) {
+                    dataList[dataList.length] = Math.random() * (100);
+                }
+                var ctx = document.getElementById("chart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dataList,
+                        datasets: [
+                            {
+                                data: dataList,
+                                fill: false,
+                                lineTension: 0.5,
+                            }
+                        ],
+                    },
+                    options: {
+                        legend: {
+                            display: false,
+                        },
+                        scales: {
+                            yAxes: [{
+                                display: false,
+                            }],
+                            xAxes: [{
+                                display: false,
+                            }],
+                        },
+                    },
+                });
+            </script>
+        </div>
+    </body>
+</html>
